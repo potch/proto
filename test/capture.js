@@ -6,8 +6,10 @@ page.open("http://localhost:3001/test", function (status) {
       page.render('screenshots/fx28.png');
       page.close();
       phantom.exit();
-    }, 5000);
+    }, 2000);
   } else {
     console.log("Sorry, the page is not loaded");
+    console.error(status);
+    phantom.exit(1);
   }
 });
