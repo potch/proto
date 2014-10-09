@@ -1,0 +1,72 @@
+
+$highlight = #27c8c2;
+$hover = #e3e3e3;
+$text = #333;
+
+brick-header {
+  font-size: 10px;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Fira Sans";
+  font-style: italic;
+  height: 5em;
+  align-items: center;
+  color: $text;
+
+  & > {
+    // This is slow. do better.
+    * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 200;
+      font-size: 2.3em;
+      flex: 1;
+      margin: 0;
+      padding: 0 .5em;
+    }
+
+    button,
+    a {
+      background: transparent;
+      border: 0;
+      font-size: 1em;
+      font: inherit;
+      height: 100%;
+      min-width: 50px;
+      padding: 0 1em;
+      cursor: pointer;
+      color: inherit;
+      display: block;
+      text-decoration: none;
+      line-height: 50px;
+      margin: 0;
+      text-align: center;
+
+      &:hover {
+        background: $hover;
+      }
+    }
+
+    [primary] {
+      color: $highlight;
+    }
+
+    [icon] {
+      font-style: normal;
+      line-height: 50px;
+      font-size: 3em;
+      font-weight: 200;
+      padding: 0;
+    }
+
+    button::-moz-focus-inner {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}

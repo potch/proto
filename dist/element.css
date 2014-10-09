@@ -1,0 +1,58 @@
+brick-header {
+  align-items: center;
+  box-sizing: border-box;
+  color: #333;
+  display: flex;
+  font-family: "Fira Sans";
+  font-size: 10px;
+  font-style: italic;
+  height: 5em;
+}
+brick-header > * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+brick-header > h1,
+brick-header > h2,
+brick-header > h3 {
+  flex: 1;
+  font-size: 2.3em;
+  font-weight: 200;
+  margin: 0;
+  padding: 0 0.5em;
+}
+brick-header > button,
+brick-header > a {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  font: inherit;
+  height: 100%;
+  line-height: 50px;
+  margin: 0;
+  min-width: 50px;
+  padding: 0 1em;
+  text-align: center;
+  text-decoration: none;
+}
+brick-header > button:hover,
+brick-header > a:hover {
+  background: #e3e3e3;
+}
+brick-header > [primary] {
+  color: #27c8c2;
+}
+brick-header > [icon] {
+  font-size: 3em;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 50px;
+  padding: 0;
+}
+brick-header > button::-moz-focus-inner {
+  margin: 0;
+  padding: 0;
+}

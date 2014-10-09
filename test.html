@@ -1,9 +1,10 @@
 <html>
   <head>
+    <meta charset=utf8>
     <title></title>
     <script src="http://mozbrick.github.io/bower_components/platform/platform.js"></script>
     <script src="dist/brick-header.js"></script>
-    <link rel="stylesheet" href="src/element.css">
+    <link rel="stylesheet" href="dist/element.css">
     <style>
       body {
         margin: 0;
@@ -12,14 +13,15 @@
     </style>
   </head>
   <body>
-    <brick-header name="Potch">
+    <brick-header>
       <button>Back</button>
       <h1>Settings</h1>
-      <button primary>Done</button>
+      <a primary href="#">Done</a>
     </brick-header>
     <brick-header>
       <h1>Settings</h1>
       <button icon>&plus;</button>
+      <button icon>&#x2665;</button>
       <button>edit</button>
     </brick-header>
   </body>
