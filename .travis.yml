@@ -1,12 +1,22 @@
 language: node_js
+
 node_js:
-- 0.1
+- 0.10
+
 addons:
-  firefox: '32.0'
+  firefox: '28.0'
+
 before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
-- ./gh-pages.sh
+- npm install -g gulp
+- ./test/install_casper.sh
+- ./test/screenshot.sh
+- ./test/gh-pages.sh
+
 env:
+- SLIMERJSLAUNCHER=$(which firefox)
+- DISPLAY=:99.0
+- PATH=$TRAVIS_BUILD_DIR/slimerjs:$PATH
   global:
     secure: ei8N8RM/03qdTCFmjyy4hjOVqG9SfKkFr3URHVa0XVYk/DtRUbEd5yA8XJ1xVKGaQwq3gHxCjTQii6gX+YcJ1AvSUXuSkniw6ElXwieHgHBlptxU4d/61enzxM5lUIxjehg9EGidb4OiCmVUjf8mQFfw/73UPoZe+CQplbZaIKA=

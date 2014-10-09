@@ -1,4 +1,5 @@
 var browserify = require('browserify');
+var connect = require('gulp-connect');
 var gulp = require('gulp');
 var templates = require('hbsify');
 var path = require('path');
@@ -26,6 +27,12 @@ gulp.task('browserify', function () {
     .bundle()
     .pipe(source(PATH.distFile))
     .pipe(gulp.dest(PATH.dist));
+});
+
+gulp.task('connect', function() {
+  connect.server({
+    port: 3001
+  });
 });
 
 gulp.task('compress', function () {
