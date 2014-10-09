@@ -23,6 +23,7 @@ function tryLoad(url, cb) {
 }
 
 tryLoad("http://localhost:3001/test", function () {
+  console.log('capturing screenshot');
   setTimeout(function () {
     page.render('screenshots/fx28.png');
     page.close();
