@@ -8,6 +8,9 @@ addons:
 
 before_script:
 - export DISPLAY=:99.0
+- export SLIMERJSLAUNCHER=$(which firefox)
+- export DISPLAY=:99.0
+- export PATH=$TRAVIS_BUILD_DIR/slimerjs:$PATH
 - sh -e /etc/init.d/xvfb start
 - npm install -g gulp
 - ./test/install_casper.sh
@@ -15,8 +18,5 @@ before_script:
 - ./test/gh-pages.sh
 
 env:
-- SLIMERJSLAUNCHER=$(which firefox)
-- DISPLAY=:99.0
-- PATH=$TRAVIS_BUILD_DIR/slimerjs:$PATH
   global:
     secure: ei8N8RM/03qdTCFmjyy4hjOVqG9SfKkFr3URHVa0XVYk/DtRUbEd5yA8XJ1xVKGaQwq3gHxCjTQii6gX+YcJ1AvSUXuSkniw6ElXwieHgHBlptxU4d/61enzxM5lUIxjehg9EGidb4OiCmVUjf8mQFfw/73UPoZe+CQplbZaIKA=
