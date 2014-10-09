@@ -6,7 +6,6 @@ var path = require('path');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var stylus = require('gulp-stylus');
-var through = require('through');
 var uglify = require('gulp-uglify');
 
 var PATH = {
