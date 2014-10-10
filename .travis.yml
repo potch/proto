@@ -5,6 +5,7 @@ node_js:
 
 addons:
   firefox: '28.0'
+  sauce_connect: true
 
 before_script:
 - export DISPLAY=:99.0
