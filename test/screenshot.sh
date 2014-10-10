@@ -3,7 +3,7 @@ echo "starting server"
 gulp connect&
 mkdir screenshots
 echo "running screenshot script"
-slimerjs test/capture.js
+node test/sauce.js
 
 echo "setting up git"
 git config --global user.email "brick@travis.biz"

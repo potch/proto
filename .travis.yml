@@ -13,10 +13,11 @@ before_script:
 - export PATH=$TRAVIS_BUILD_DIR/slimerjs:$PATH
 - sh -e /etc/init.d/xvfb start
 - npm install -g gulp
-- ./test/install-slimer.sh
 - ./test/screenshot.sh
 - ./test/gh-pages.sh
 
 env:
   global:
-    secure: ei8N8RM/03qdTCFmjyy4hjOVqG9SfKkFr3URHVa0XVYk/DtRUbEd5yA8XJ1xVKGaQwq3gHxCjTQii6gX+YcJ1AvSUXuSkniw6ElXwieHgHBlptxU4d/61enzxM5lUIxjehg9EGidb4OiCmVUjf8mQFfw/73UPoZe+CQplbZaIKA=
+  - secure: ei8N8RM/03qdTCFmjyy4hjOVqG9SfKkFr3URHVa0XVYk/DtRUbEd5yA8XJ1xVKGaQwq3gHxCjTQii6gX+YcJ1AvSUXuSkniw6ElXwieHgHBlptxU4d/61enzxM5lUIxjehg9EGidb4OiCmVUjf8mQFfw/73UPoZe+CQplbZaIKA=
+  - secure: HVVLJwt23k6x2qn+zoGr2Se+8XV3BVL7DG2ezWPgZ5R8e6PU7dgE9lgviwSR9waQYX/wGCjg/I3aer+0w2yITYMdnLII2Vg+GE4y0+HaF+rwSs85stn0BYyqjnIUPSRqBity9XZPQgrqeng1YnfVDuQ/NmkQl0S+3sis694x7yE=
+  - secure: XwgSd3amXJAnGiPQ1pR6f8XTcc6825Ll1A2vI2ibnfxqrv1wW8I4ZZpJ/vRoBvTVJsLw1xeSVCsmlKdvJFjssmb2mnzFPCsHGi8gHf3JKwyp0ZNnr+uhLEk4bm3K7rNgZhK1+fYE4mNyP0k+YmIDsRrPjkDkNz48LrzvHe/DfKU=

@@ -20,7 +20,8 @@
     "hbsify": "^1.0.1",
     "html2js": "0.0.3",
     "html2js-browserify": "0.0.2",
-    "vinyl-source-stream": "^1.0.0"
+    "vinyl-source-stream": "^1.0.0",
+    "webdriverio": "^2.2.3"
   },
   "browser": {
     "handlebars": "handlebars/dist/cjs/handlbars.runtime.js"
