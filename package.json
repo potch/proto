@@ -4,7 +4,7 @@
   "description": "brick component prototype",
   "main": "index.js",
   "scripts": {
-    "test": "slimerjs"
+    "test": "echo 'test'"
   },
   "author": "Potch",
   "license": "MIT",
