@@ -28,9 +28,6 @@ var environments = [
   {
     browserName: 'chrome',
     platform: 'OS X 10.9'
-  },
-  {
-    browserName: 'safari',
   }
 ];
 
