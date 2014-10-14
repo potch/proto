@@ -4,16 +4,13 @@ node_js:
 - 0.10
 
 addons:
-  firefox: '28.0'
   sauce_connect: true
 
 before_script:
-- export DISPLAY=:99.0
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
 - npm install -g gulp
+- echo $CI_TASK
 
-script: ./test/${CI_TASK}/run.sh
+script: source ./test/$CI_TASK/run.sh
 
 env:
   matrix:
