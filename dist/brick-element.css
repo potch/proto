@@ -1,0 +1,58 @@
+brick-element .brick-element-root {
+  font-size: 10px;
+  box-sizing: border-box;
+  display: flex;
+  font-family: "Fira Sans";
+  font-style: italic;
+  height: 5em;
+  align-items: center;
+  color: #333;
+}
+brick-element .brick-element-root > * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+brick-element .brick-element-root > h1,
+brick-element .brick-element-root > h2,
+brick-element .brick-element-root > h3 {
+  font-weight: 200;
+  font-size: 2.3em;
+  flex: 1;
+  margin: 0;
+  padding: 0 0.5em;
+}
+brick-element .brick-element-root > button,
+brick-element .brick-element-root > a {
+  background: transparent;
+  border: 0;
+  font-size: 1em;
+  font: inherit;
+  height: 100%;
+  min-width: 50px;
+  padding: 0 1em;
+  cursor: pointer;
+  color: inherit;
+  display: block;
+  text-decoration: none;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+}
+brick-element .brick-element-root > button:hover,
+brick-element .brick-element-root > a:hover {
+  background: #e3e3e3;
+}
+brick-element .brick-element-root > [primary] {
+  color: #27c8c2;
+}
+brick-element .brick-element-root > [icon] {
+  font-style: normal;
+  line-height: 50px;
+  font-size: 3em;
+  font-weight: 200;
+  padding: 0;
+}
+brick-element .brick-element-root > button::-moz-focus-inner {
+  padding: 0;
+  margin: 0;
+}

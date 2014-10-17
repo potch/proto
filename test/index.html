@@ -2,10 +2,14 @@
   <head>
     <meta charset=utf8>
     <title></title>
-    <script src="http://mozbrick.github.io/bower_components/platform/platform.js"></script>
-    <script src="../dist/brick-header.js"></script>
-    <link ref="stylesheet" href="http://code.cdn.mozilla.net/fonts/fira.css">
-    <link rel="stylesheet" href="../dist/element.css">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/document-register-element/0.1.2/document-register-element.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../dist/brick-element.css">
+    <script src="../dist/brick-element.js"></script>
+
     <style>
       body {
         margin: 0;
@@ -13,19 +17,20 @@
         background: #fff;
       }
     </style>
+
   </head>
   <body>
-    <h1>Test</h1>
-    <brick-header>
+
+    <brick-element title="Test">
       <button>Back</button>
-      <h1>Settings</h1>
       <a primary href="#">Done</a>
-    </brick-header>
-    <brick-header>
-      <h1>Settings</h1>
+    </brick-element>
+
+    <brick-element title="Settings">
       <button icon>&plus;</button>
       <button icon>&#x2665;</button>
       <button>edit</button>
-    </brick-header>
+    </brick-element>
+
   </body>
 </html>
