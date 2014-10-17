@@ -1,41 +1,49 @@
 var browserify = require('browserify');
 var connect = require('gulp-connect');
 var gulp = require('gulp');
-var templates = require('hbsify');
 var path = require('path');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var stylus = require('gulp-stylus');
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var deploy = require('gulp-gh-pages');
 
 var PATH = {
-  src: 'src',
+  src: __dirname + '/src',
   main: 'element.js',
   stylus: 'element.styl',
-  srcFiles: 'src/**/*',
-  dist: 'dist',
-  distFile: 'brick-header.js'
+  srcFiles: './src/**/*',
+  dist: './dist',
+  distFileJS: 'brick-element.js',
+  distFileCSS: 'brick-element.css'
 };
 
-gulp.task('build', ['browserify', 'stylus']);
+gulp.task('build', ['browserify', 'stylus', 'compress']);
+
+gulp.task('server', ['build', 'connect', 'watch']);
+
+gulp.task('watch', ['build'], function () {
+  gulp.watch(PATH.srcFiles, ['build']);
+});
 
 gulp.task('browserify', function () {
-  browserify({basedir: PATH.src, debug: true})
+  browserify({debug: false})
     .add(path.join(PATH.src, PATH.main))
-    .transform(templates)
     .bundle()
-    .pipe(source(PATH.distFile))
+    .pipe(source(PATH.distFileJS))
     .pipe(gulp.dest(PATH.dist));
 });
 
-gulp.task('connect', function() {
-  connect.server({
-    port: 3001
-  });
+gulp.task('stylus', function () {
+  gulp.src(path.join(PATH.src, PATH.stylus))
+    .pipe(stylus())
+    .pipe(concat(PATH.distFileCSS))
+    .pipe(gulp.dest(PATH.dist));
 });
 
-gulp.task('compress', function () {
-  gulp.src(path.join(PATH.dist,PATH.distFile))
+gulp.task('compress', ['browserify'], function () {
+  gulp.src(path.join(PATH.dist, PATH.distFileJS))
     .pipe(uglify())
     .pipe(rename(function (file) {
       file.basename += '-min';
@@ -43,15 +51,11 @@ gulp.task('compress', function () {
     .pipe(gulp.dest(PATH.dist));
 });
 
-gulp.task('stylus', function () {
-  gulp.src(path.join(PATH.src,PATH.stylus))
-    .pipe(stylus())
-    .pipe(rename(function (file) {
-      file.extname = '.css';
-    }))
-    .pipe(gulp.dest(PATH.dist));
+gulp.task('connect', function() {
+  connect.server({ port: 3001 });
 });
 
-gulp.task('watch', function () {
-  gulp.watch(PATH.srcFiles, ['build']);
+gulp.task('deploy', function () {
+  gulp.src(PATH.dist + '/**/*')
+    .pipe(deploy({}));
 });
